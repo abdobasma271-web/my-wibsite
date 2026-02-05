@@ -1,0 +1,63 @@
+body{
+  height: 2000px;
+  overflow-x: hidden;
+}
+
+.btn-hero{
+    width: 25%;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    padding:4px;
+    border-radius: 5px;
+    text-align: center;
+    transition: 0.2s;
+    
+
+}
+
+.btn-hero:hover{
+    width: 25%;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    padding:4px;
+    border-radius: 8px;
+    /* font-size: 17px; */
+    text-align: center;
+}
+
+/* حركة الاسهم */
+ 
+ .img-translate{
+    animation: translate-img 1s ease-in-out infinite;
+
+ }
+
+ @keyframes translate-img {
+    0%,
+    100% {
+      transform: translatex(-4px);
+    }
+    50% {
+      transform: translatex(4px);
+    }
+  }
+
+
+  /* حركة الكرت في قسم الكورسات */
+   
+  .course img{
+    opacity: 0.75;
+    transition-duration: 0.3s;
+  }
+
+  .course:hover img{
+    opacity: 1;
+  }
+
+
+  /* وضع اطار لرأي المدرب بصفحة الانجاز */
+
+  .teacher-reviw p{
+    border: dashed 1px rgb(88, 135, 243);
+    border-radius: 5px;
+  }

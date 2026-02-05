@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+  <!-- الخطوط -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+  </style>
+
+  <style>
+    .font-tajawal {
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    .font-almarai {
+      font-family: 'Almarai', sans-serif;
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
+
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- تفعيل الوضع الليلي -->
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+
+  <!-- Flowbite CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+  <!-- fontawsome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="bg-white dark:bg-gray-900 font-tajawal">
+
+  <!-- Navbar -->
+  <nav class="bg-gradient-to-r from-blue-600 to-blue-300 fixed top-0 left-0 w-full z-50">
+    <div class="max-w-screen-xl mx-auto px-6 py-3 flex items-center justify-between">
+
+      <!-- الشعار -->
+      <a href="#" class="flex items-center gap-3">
+        <img class="h-16 w-auto py-0 pr-4" src="assets/images/logo2.png" alt="المبرمج الصغير" />
+      </a>
+
+      <!-- القائمة بالوسط -->
+      <ul class="hidden md:flex items-center space-x-6 ">
+        <li><a href="#home" class="hover:bg-blue-300 transition p-2">الرئيسية</a></li>
+        <li><a href="#courses" class="hover:bg-blue-300 transition p-2 ">الدورات</a></li>
+        <li><a href="#about" class="hover:bg-blue-300 transition p-2">من نحن</a></li>
+        <li><a href="#contact" class="hover:bg-blue-300 transition p-2">تواصل معنا</a></li>
+      </ul>
+      <!-- القائمة على الموبايل -->
+      <ul id="menu" class="hidden fixed left-0 top-[88px] w-full bg-blue-200 z-40 flex-col
+         items-center md:hidden">
+        <li class="hover:bg-blue-300 py-3"><a href="#home">الرئيسية</a></li>
+        <li class="hover:bg-blue-300 py-3"><a href="#courses">الدورات</a></li>
+        <li class="hover:bg-blue-300 py-3"><a href="#about">من نحن</a></li>
+        <li class="hover:bg-blue-300 py-3"><a href="#contact">تواصل معنا</a></li>
+      </ul>
+
+      <!-- زر القائمة (همبرغر) -->
+      <button id="menu-toggle" class="p-2.5 rounded-lg text-white/90 hover:bg-white/10  md:hidden">
+        ☰
+      </button>
+
+      <!-- زر الوضع الليلي -->
+      <button id="theme-toggle" class="p-2.5 rounded-lg text-white/90 hover:bg-white/10">
+        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor">
+          <path d="M10 15a5 5 0 100-10 5 5 0 000 10z" />
+        </svg>
+        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor">
+          <path fill-rule="evenodd" d="M17.293 13.293A8 8 0 016.707 2.707a8 8 0 1010.586 10.586z" />
+        </svg>
+      </button>
+
+    </div>
+  </nav>
+  <!-- end navbar -->
+
+  <!-- رأس الصفحة -->
+  <section class="pt-[115px] bg-blue-100 h-80 dark:bg-gray-900">
+    <div class="container mx-auto flex justify-between ">
+
+      <div class="grow flex flex-col mt-3 md:mt-8 p-4">
+        <h1 class="text-3xl text-blue-500 mb-5 font-bold">كورس تطبيق scratsh</h1>
+        <p class="mb-3 text-blue-950 dark:text-gray-300 text-xl font-bold">المدرب : أسعد مالك</p>
+
+        <ul class="list-none flex gap-5  text-blue-950 dark:text-gray-300">
+          <li>
+            <i class="fa-regular fa-square-check"></i>
+            2025/نيسان
+          </li>
+          <li>
+            <i class="fa-regular fa-file-lines"></i>
+            41 درس
+          </li>
+          <li>
+            <i class="fa-regular fa-globe"></i>
+            اللغة العربية
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="w-[25%] hidden md:block">
+        <img class="w-[100%] " src="assets/images/co2.jpg" alt="">
+      </div>
+
+    </div>
+  </section>
+  <!-- نهاية القسم -->
+
+
+  <!-- قسم المحتوى  -->
+  <section class="main-content ">
+    <div class="container mx-auto">
+      <div class="inner-content flex gap-5 flex-col-reverse md:flex-row m-3 md:m-0">
+        <div class="content grow bg-white dark:bg-gray-900">
+
+          <ul class="flex flex-wrap  text-sm font-medium text-center" data-tabs-toggle="#myTabsContent">
+            <li class="mr-2">
+              <a href="#"
+                class="inline-block p-4 border-b-2 border-transparent hover:text-blue-500 hover:border-blue-500"
+                id="tab1-tab" data-tabs-target="#tab1" role="tab" type="button">
+                تفاصيل الكورس
+              </a>
+            </li>
+
+            <li class="mr-2">
+              <a href="#"
+                class="inline-block p-4 border-b-2 border-transparent hover:text-blue-500 hover:border-blue-500"
+                id="tab2-tab" data-tabs-target="#tab2" role="tab" type="button">
+                المنهاج
+              </a>
+            </li>
+
+            <li class="mr-2">
+              <a href="#"
+                class="inline-block p-4 border-b-2 border-transparent hover:text-blue-500 hover:border-blue-500"
+                id="tab2-tab" data-tabs-target="#tab3" role="tab" type="button">
+                حول المدرب
+              </a>
+            </li>
+
+          </ul>
+
+          <div id="myTabsContent">
+
+            <div id="tab1" class="hidden p-4">
+
+
+              <div class="grid grid-cols-2 bg-gray-50 rounded-xl dark:bg-gray-700">
+
+                <!-- الديف الأول -->
+                <div class="p-4" dir="rtl">
+                  <ul class="space-y-2 text-gray-700 dark:text-gray-200 text-sm">
+                    <li class="flex items-center gap-2">
+                      <i class="fa-solid fa-computer text-blue-400 text-sm"></i>
+                      أساسيات البرمجة
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <i class="fa-solid fa-shapes text-blue-400 text-sm"></i>
+                      استخدام الكتل
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <i class="fa-solid fa-gamepad text-blue-400 text-sm"></i>
+                      صنع الألعاب
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <i class="fa-solid fa-lightbulb text-blue-400 text-sm"></i>
+                      التفكير الإبداعي
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- الديف الثاني -->
+                <div class="p-4" dir="rtl">
+                  <ul class="space-y-2 text-gray-700 dark:text-gray-200 text-sm">
+                    <li class="flex items-center gap-2">
+                      <i class="fa-solid fa-code text-blue-400 text-sm"></i>
+                      كتابة الأوامر
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <i class="fa-solid fa-music text-blue-400 text-sm"></i>
+                      إضافة الأصوات
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <i class="fa-solid fa-paint-brush text-blue-400 text-sm"></i>
+                      تصميم الشخصيات
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <i class="fa-solid fa-project-diagram text-blue-400 text-sm"></i>
+                      تنظيم المشاريع
+                    </li>
+                  </ul>
+                </div>
+
+
+
+              </div>
+
+              <div class="my-5 mx-2 text-gray-900 dark:text-gray-300">
+                كورس تطبيق سكراتش هو مدخل ممتع لعالم البرمجة الموجهة للأطفال والمبتدئين.
+                من خلال هذا الكورس ستتعلم كيفية استخدام واجهة سكراتش البسيطة لبناء مشاريع تفاعلية، ألعاب تعليمية،
+                ورسوم متحركة. يعتمد سكراتش على أسلوب "البرمجة بالكتل" الذي يجعل كتابة الأوامر سهلة ومشوقة دون الحاجة
+                إلى خبرة سابقة في الأكواد.
+              </div>
+
+              <div class="my-5 mx-2 text-gray-900 dark:text-gray-300">
+                الكورس مصمم ليكون عملي وتطبيقي، حيث ينجز الطالب مشاريع صغيرة في كل درس، مما يعزز الثقة بالنفس ويشجعه على
+                الابتكار. في النهاية، سيكون المتعلم قادرًا على تصميم لعبته أو قصته التفاعلية الخاصة، باستخدام أدوات سهلة
+                ومرنة تناسب جميع الأعمار.
+              </div>
+
+              <div class="my-5 mx-2 flex">
+                <img class="w-1/2 h-40" src="assets/images/sc.jpg" alt="">
+                <img class="w-1/2 h-40" src="assets/images/sc2.jpg" alt="">
+
+              </div>
+
+              <div class="my-5 mx-2 text-gray-900 dark:text-gray-300">
+                تطبيق سكراتش منصة تعليمية تفاعلية تتيح للمبتدئينتعلم أساسيات البرمجة عن طريق السحب والإفلات. يساعد
+                المستخدم على ابتكار قصص وألعاب ورسوم متحركة بسهولة وبدون خبرة سابقة
+              </div>
+
+            </div>
+
+
+
+            <div id="tab2" class="hidden p-4">
+              <div class="bg-gray-50 text-blue-950 rounded-xl overflow-hidden dark:bg-gray-700 dark:text-gray-300"
+                id="accordion-collapse" data-accordion="collapse"
+                class="rounded-base border border-default overflow-hidden shadow-xs">
+                <h2 id="accordion-collapse-heading-1" class="hover:bg-gray-100  dark:hover:bg-gray-500">
+                  <button type="button"
+                    class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-body rounded-t-base border border-t-0 border-x-0 border-b-default hover:text-heading hover:bg-neutral-secondary-medium gap-3"
+                    data-accordion-target="#accordion-collapse-body-1" aria-expanded="false"
+                    aria-controls="accordion-collapse-body-1">
+                    <span> الفصل الاول</span>
+                    <svg data-accordion-icon class="w-5 h-5 rotate-180 shrink-0" aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m5 15 7-7 7 7" />
+                    </svg>
+                  </button>
+                </h2>
+                <div id="accordion-collapse-body-1"
+                  class="hidden border border-s-0 border-e-0 border-t-0 border-b-default"
+                  aria-labelledby="accordion-collapse-heading-1">
+                  <div
+                    class="p-4 md:p-5 flex justify-between text-blue-500  hover:bg-gray-100 hover:cursor-pointer dark:hover:bg-gray-400">
+
+                    <a href=""><i class="fa-solid fa-book"></i>
+                      الدرس الأول</a>
+
+                    <div>
+
+                      30 دقيقة
+                      <i class="fa-regular fa-clock"></i>
+                    </div>
+
+
+                  </div>
+                  <div
+                    class="p-4 md:p-5 flex justify-between  text-blue-500  hover:bg-gray-100 hover:cursor-pointer  dark:hover:bg-gray-400">
+                    <div>
+                      <i class="fa-solid fa-book"></i>
+                      الدرس الثاني
+                    </div>
+                    <div>
+
+                      34 دقيقة
+                      <i class="fa-regular fa-clock"></i>
+                    </div>
+
+
+                  </div>
+                  <div
+                    class="p-4 md:p-5 flex justify-between  text-blue-500  hover:bg-gray-100 hover:cursor-pointer  dark:hover:bg-gray-400">
+                    <div>
+                      <i class="fa-solid fa-book"></i>
+                      الدرس الثالث
+                    </div>
+                    <div>
+
+                      20 دقيقة
+                      <i class="fa-regular fa-clock"></i>
+                    </div>
+
+
+                  </div>
+                  <div
+                    class="p-4 md:p-5 flex justify-between  text-blue-500  hover:bg-gray-100 hover:cursor-pointer  dark:hover:bg-gray-400">
+                    <div>
+                      <i class="fa-solid fa-book"></i>
+                      الدرس الرابع
+                    </div>
+                    <div>
+
+                      40 دقيقة
+                      <i class="fa-regular fa-clock"></i>
+                    </div>
+
+
+                  </div>
+                  <div
+                    class="p-4 md:p-5 flex justify-between  text-blue-500  hover:bg-gray-100 hover:cursor-pointer  dark:hover:bg-gray-400">
+                    <div>
+                      <i class="fa-solid fa-book"></i>
+                      الدرس الخامس
+                    </div>
+                    <div>
+
+                      30 دقيقة
+                      <i class="fa-regular fa-clock"></i>
+                    </div>
+
+
+                  </div>
+
+                </div>
+
+
+
+
+                <h2 id="accordion-collapse-heading-2" class="hover:bg-gray-100  dark:hover:bg-gray-500">
+                  <button type="button"
+                    class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-body border border-x-0 border-b-default border-t-0 hover:text-heading hover:bg-neutral-secondary-medium gap-3"
+                    data-accordion-target="#accordion-collapse-body-2" aria-expanded="false"
+                    aria-controls="accordion-collapse-body-2">
+                    <span>الفصل الثاني</span>
+                    <svg data-accordion-icon class="w-5 h-5 rotate-180 shrink-0" aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m5 15 7-7 7 7" />
+                    </svg>
+                  </button>
+                </h2>
+                <div id="accordion-collapse-body-2"
+                  class="hidden border border-s-0 border-e-0 border-t-0 border-b-default"
+                  aria-labelledby="accordion-collapse-heading-1">
+                  <div
+                    class="p-4 md:p-5 flex justify-between  text-blue-500  hover:bg-gray-100 hover:cursor-pointer  dark:hover:bg-gray-400">
+                    <div>
+                      <i class="fa-solid fa-book"></i>
+                      الدرس الأول
+                    </div>
+                    <div>
+
+                      30 دقيقة
+                      <i class="fa-regular fa-clock"></i>
+                    </div>
+
+
+                  </div>
+                  <div
+                    class="p-4 md:p-5 flex justify-between  text-blue-500  hover:bg-gray-100 hover:cursor-pointer  dark:hover:bg-gray-400">
+                    <div>
+                      <i class="fa-solid fa-book"></i>
+                      الدرس الثاني
+                    </div>
+                    <div>
+
+                      34 دقيقة
+                      <i class="fa-regular fa-clock"></i>
+                    </div>
+
+
+                  </div>
+                  <div
+                    class="p-4 md:p-5 flex justify-between  text-blue-500  hover:bg-gray-100 hover:cursor-pointer  dark:hover:bg-gray-400">
+                    <div>
+                      <i class="fa-solid fa-book"></i>
+                      الدرس الثالث
+                    </div>
+                    <div>
+
+                      20 دقيقة
+                      <i class="fa-regular fa-clock"></i>
+                    </div>
+
+
+                  </div>
+                  <div
+                    class="p-4 md:p-5 flex justify-between  text-blue-500  hover:bg-gray-100 hover:cursor-pointer  dark:hover:bg-gray-400">
+                    <div>
+                      <i class="fa-solid fa-book"></i>
+                      الدرس الرابع
+                    </div>
+                    <div>
+
+                      40 دقيقة
+                      <i class="fa-regular fa-clock"></i>
+                    </div>
+
+
+                  </div>
+                  <div
+                    class="p-4 md:p-5 flex justify-between  text-blue-500  hover:bg-gray-100 hover:cursor-pointer  dark:hover:bg-gray-400">
+                    <div>
+                      <i class="fa-solid fa-book"></i>
+                      الدرس الخامس
+                    </div>
+                    <div>
+
+                      30 دقيقة
+                      <i class="fa-regular fa-clock"></i>
+                    </div>
+
+
+                  </div>
+
+                </div>
+
+
+
+
+
+                <h2 id="accordion-collapse-heading-3" class="hover:bg-gray-100 dark:hover:bg-gray-500">
+                  <button type="button"
+                    class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-body hover:text-heading hover:bg-neutral-secondary-medium gap-3"
+                    data-accordion-target="#accordion-collapse-body-3" aria-expanded="false"
+                    aria-controls="accordion-collapse-body-3">
+                    <span>الفصل الثالث</span>
+                    <svg data-accordion-icon class="w-5 h-5 rotate-180 shrink-0" aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m5 15 7-7 7 7" />
+                    </svg>
+                  </button>
+                </h2>
+                <div id="accordion-collapse-body-3"
+                  class="hidden border border-s-0 border-e-0 border-t-0 border-b-default"
+                  aria-labelledby="accordion-collapse-heading-1">
+                  <div
+                    class="p-4 md:p-5 flex justify-between  text-blue-500  hover:bg-gray-100 hover:cursor-pointer  dark:hover:bg-gray-400">
+                    <div>
+                      <i class="fa-solid fa-book"></i>
+                      الدرس الأول
+                    </div>
+                    <div>
+
+                      30 دقيقة
+                      <i class="fa-regular fa-clock"></i>
+                    </div>
+
+
+                  </div>
+                  <div
+                    class="p-4 md:p-5 flex justify-between  text-blue-500  hover:bg-gray-100 hover:cursor-pointer  dark:hover:bg-gray-400">
+                    <div>
+                      <i class="fa-solid fa-book"></i>
+                      الدرس الثاني
+                    </div>
+                    <div>
+
+                      34 دقيقة
+                      <i class="fa-regular fa-clock"></i>
+                    </div>
+
+
+                  </div>
+                  <div
+                    class="p-4 md:p-5 flex justify-between  text-blue-500  hover:bg-gray-100 hover:cursor-pointer  dark:hover:bg-gray-400">
+                    <div>
+                      <i class="fa-solid fa-book"></i>
+                      الدرس الثالث
+                    </div>
+                    <div>
+
+                      20 دقيقة
+                      <i class="fa-regular fa-clock"></i>
+                    </div>
+
+
+                  </div>
+                  <div
+                    class="p-4 md:p-5 flex justify-between  text-blue-500  hover:bg-gray-100 hover:cursor-pointer  dark:hover:bg-gray-400">
+                    <div>
+                      <i class="fa-solid fa-book"></i>
+                      الدرس الرابع
+                    </div>
+                    <div>
+
+                      40 دقيقة
+                      <i class="fa-regular fa-clock"></i>
+                    </div>
+
+
+                  </div>
+                  <div
+                    class="p-4 md:p-5 flex justify-between  text-blue-500  hover:bg-gray-100 hover:cursor-pointer  dark:hover:bg-gray-400">
+                    <div>
+                      <i class="fa-solid fa-book"></i>
+                      الدرس الخامس
+                    </div>
+                    <div>
+
+                      30 دقيقة
+                      <i class="fa-regular fa-clock"></i>
+                    </div>
+
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+
+            <div id="tab3" class="hidden p-4">
+              <h2 class=" mr-3 text-xl font-bold text-blue-500">أسعد مالك</h2>
+              <div class="mr-3 flex items-center gap-8 mt-5">
+                <img class="w-[130px] h-[130px] rounded-full object-cover" src="assets/images/te.jpg" alt="">
+                <span class=" text-cyan-500">
+                  <i class="fa-solid fa-users"></i>
+                  390 طالب
+                </span>
+                <span class=" text-cyan-500">
+                  <i class="fa-brands fa-discourse"></i>
+                  22 كورس
+                </span>
+              </div>
+
+              <div class=" mr-3 my-5 text-blue-950 dark:text-gray-300">بكالوريوس في هندسة البرمجيات ودبلوم متخصص في
+                الذكاء
+                الاصطناعي وتطوير الأنظمة.</div>
+
+              <div class="mr-3 social flex gap-2 text-lg hover:cursor-pointer dark:text-gray-300">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-square-whatsapp"></i>
+                <i class="fa-brands fa-square-snapchat"></i>
+                <i class="fa-brands fa-linkedin"></i>
+
+              </div>
+            </div>
+
+
+
+          </div>
+
+
+          <div class="reviws m-3">
+
+            <h2 class="text-xl mt-2 mb-4 font-bold text-blue-600 "> التقييم</h2>
+
+            <div class="flex gap-1 text-yellow-500">
+
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+
+            </div>
+
+            <div class="progress my-4 dark:text-gray-300 ">
+               <div class="flex items-center gap-4 ">
+                <span class="font-bold">90</span>
+                <span class="font-bold">40%</span>
+                <div class="w-full bg-gray-200 rounded-full">
+                  <div class="bg-cyan-400 text-xs font-medium text-white
+                     text-center p-0.5 leading-none rounded-full h-3 flex items-center justify-center"
+                    style="width: 40%"> 40%</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 ">
+                <span class="font-bold ">50</span>
+                <span class="font-bold">20%</span>
+                <div class="w-full bg-gray-200 rounded-full">
+                  <div class="bg-cyan-400 text-xs font-medium text-white
+                     text-center p-0.5 leading-none rounded-full h-3 flex items-center justify-center"
+                    style="width: 20%"> 20%</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 ">
+                <span class="font-bold">80</span>
+                <span class="font-bold">20%</span>
+                <div class="w-full bg-gray-200 rounded-full">
+                  <div class="bg-cyan-400 text-xs font-medium text-white
+                     text-center p-0.5 leading-none rounded-full h-3 flex items-center justify-center"
+                    style="width: 20%"> 20%</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 ">
+                <span class="font-bold">95</span>
+                <span class="font-bold">20%</span>
+                <div class="w-full bg-gray-200 rounded-full">
+                  <div class="bg-cyan-400 text-xs font-medium text-white
+                     text-center p-0.5 leading-none rounded-full h-3 flex items-center justify-center"
+                    style="width: 20%"> 20%</div>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+
+
+        <div class="details w-full md:w-[25%] shrink-0 bg-gray-50  dark:bg-gray-700 h-full ">
+          <div class="flex flex-col items-center">
+            <p class="text-center my-3 text-2xl font-bold text-red-500">150$</p>
+            <button
+              class="bg-yellow-400 w-[90%] rounded-xl p-1 hover:bg-yellow-300 text-xl text-blue-950">اشتراك</button>
+          </div>
+
+          <div class="flex flex-col gap-3 text-right mr-6 mt-2" dir="rtl">
+
+            <span class="flex items-center gap-2 text-gray-700 dark:text-gray-200">
+              <i class="fa-solid fa-clock text-cyan-500 text-lg"></i>
+              مدة الكورس: ٤ أسابيع
+            </span>
+
+            <span class="flex items-center gap-2 text-gray-700 dark:text-gray-200">
+              <i class="fa-solid fa-user-graduate text-cyan-500 text-lg"></i>
+              المستوى: مبتدئ
+            </span>
+
+            <span class="flex items-center gap-2 text-gray-700 dark:text-gray-200">
+              <i class="fa-solid fa-video text-cyan-500 text-lg"></i>
+              عدد الدروس: ٢٠ درس
+            </span>
+
+            <span class="flex items-center gap-2 text-gray-700 dark:text-gray-200">
+              <i class="fa-solid fa-certificate text-cyan-500 text-lg"></i>
+              شهادة: متاحة
+            </span>
+
+            <span class="flex items-center gap-2 text-gray-700 dark:text-gray-200">
+              <i class="fa-solid fa-globe text-cyan-500 text-lg"></i>
+              اللغة: العربية
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="mb-8 rounded-lg p-4 courses-2 bg-gray-50 dark:bg-gray-800">
+        <h2 class="text-blue-500 text-3xl font-bold p-6">كورسات مشابهة</h2>
+        <div class="corse grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+
+          <div
+            class="course mb-3 mx-8 md:mx-4 bg-blue-200 dark:bg-gray-700 rounded-xl transition-all duration-300 hover:shadow-blue-400 hover:shadow-lg cursor-default">
+            <div class="img-course relative">
+              <div
+                class="absolute top-1.5 right-1.5 text-12 bg-yellow-500 text-gray-700 px-1 z-10 rounded-t-lg rounded-br-lg">
+                برمجة
+              </div>
+              <img class="p-1 rounded-t-xl w-full   duration-500 bg-cover h-[170px] " src="assets/images/co1.jpg"
+                alt="">
+            </div>
+            <div class="info-course p-2">
+              <h1 class="text-center text-2xl mb-2 font-bold text-blue-600 dark:text-gray-300"> بايثون للأطفال </h1>
+              <p class="text-center dark:text-gray-100">تعليم مبادئ البايثون بطريقة سلسة وبسيطة</p>
+            </div>
+            <div class="price-course flex mr-6 mb">
+              <div class="flex  dark:text-gray-100 ">
+                <p class="">سعر الكورس : </p>
+                <p class="line-through">200$</p>
+              </div>
+              <p class="text-red-600 font-bold mr-3 text-center"> 130$</p>
+
+            </div>
+            <div class="flex items-center justify-center my-2">
+              <a href="course.html"
+                class="block text-center bg-yellow-500 text-gray-700 font-bold hover:bg-yellow-300 px-2 py-1 rounded-lg">عرض
+                التفاصيل</a>
+            </div>
+          </div>
+          <div
+            class="course mb-3 mx-8 md:mx-4 bg-blue-200 dark:bg-gray-700 rounded-xl transition-all duration-300 hover:shadow-blue-400 hover:shadow-lg ">
+            <div class="img-course relative">
+              <div class="absolute top-1.5 right-1.5  bg-yellow-500 text-gray-700 px-1 z-10 rounded-t-lg rounded-br-lg">
+                برمجة
+              </div>
+              <img class="p-1 rounded-t-xl w-full   duration-500 bg-cover h-[170px] " src="assets/images/co2.jpg"
+                alt="">
+            </div>
+            <div class="info-course p-2">
+              <h1 class="text-center text-2xl mb-2 font-bold text-blue-600 dark:text-gray-300">كورس scratsh </h1>
+              <p class="text-center dark:text-gray-100">تعليم الأطفال مبادئ البرمجة عن طريق تطبيق سكراتش</p>
+            </div>
+            <div class="price-course flex mr-6">
+              <div class="flex  dark:text-gray-100 ">
+                <p class="">سعر الكورس : </p>
+                <p class="line-through">200$</p>
+              </div>
+              <p class="text-red-600 font-bold mr-3 text-center"> 130$</p>
+
+            </div>
+            <div class="flex items-center justify-center my-2">
+              <a href="course.html"
+                class="block text-center bg-yellow-500 text-gray-700 font-bold hover:bg-yellow-300 px-2 py-1 rounded-lg">عرض
+                التفاصيل</a>
+            </div>
+          </div>
+          <div
+            class="course mb-3 mx-8 md:mx-4 bg-blue-200 dark:bg-gray-700 rounded-xl transition-all duration-300 hover:shadow-blue-400 hover:shadow-lg ">
+            <div class="img-course relative">
+              <div class="absolute top-1.5 right-1.5  bg-yellow-500 text-gray-700 px-1 z-10 rounded-t-lg rounded-br-lg">
+                الرسم الرقمي
+              </div>
+              <img class="p-1 rounded-t-xl w-full   duration-500 bg-cover h-[170px] " src="assets/images/co3.jpg"
+                alt="">
+            </div>
+            <div class="info-course p-2">
+              <h1 class="text-center text-2xl mb-2 font-bold text-blue-600 dark:text-gray-300"> الرسم الرقمي </h1>
+              <p class="text-center dark:text-gray-100">تعليم مبادئ الرسم الرقمي للأطفال بطريقة ممتعة </p>
+            </div>
+            <div class="price-course flex  mr-6">
+              <div class="flex  dark:text-gray-100 ">
+                <p class="">سعر الكورس : </p>
+                <p class="line-through">200$</p>
+              </div>
+              <p class="text-red-600 font-bold mr-3 text-center"> 130$</p>
+
+            </div>
+            <div class="flex items-center justify-center my-2">
+              <a href="course.html"><button
+                  class="block text-center bg-yellow-500 text-gray-700 font-bold hover:bg-yellow-300 px-2 py-1 rounded-lg">عرض
+                  التفاصيل</button></a>
+            </div>
+          </div>
+          <div
+            class="course mb-3 mx-8 md:mx-4 bg-blue-200 dark:bg-gray-700 rounded-xl transition-all duration-300 hover:shadow-blue-400 hover:shadow-lg ">
+            <div class="img-course relative">
+              <div class="absolute top-1.5 right-1.5  bg-yellow-500 text-gray-700 px-1 z-10 rounded-t-lg rounded-br-lg">
+                برمجة
+              </div>
+              <img class="p-1 rounded-t-xl w-full   duration-500 bg-cover h-[170px] " src="assets/images/co4.jpg"
+                alt="">
+            </div>
+            <div class="info-course p-2">
+              <h1 class="text-center text-2xl mb-2 font-bold text-blue-600 dark:text-gray-300"> برمجة الألعاب </h1>
+              <p class="text-center dark:text-gray-100"> برمجة الألعاب وكيفية بناءها خطوة بخطوة </p>
+            </div>
+            <div class="price-course flex  mr-6">
+              <div class="flex  dark:text-gray-100 ">
+                <p class="">سعر الكورس : </p>
+                <p class="line-through">200$</p>
+              </div>
+              <p class="text-red-600 font-bold mr-3 text-center"> 130$</p>
+
+            </div>
+            <div class="flex items-center justify-center my-2">
+              <a href="course.html"
+                class="block text-center bg-yellow-500 text-gray-700 font-bold hover:bg-yellow-300 px-2 py-1 rounded-lg">عرض
+                التفاصيل</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- نهاية القسم -->
+
+
+  <!-- footer -->
+
+  <footer style="background-image: url('assets/images/footer.jpg');" class=" text-gray-300  ">
+
+    <div class="container mx-auto grid grid-cols-1 lg:grid-cols-4 py-8 gap-4">
+
+      <div class="f1 text-center md:text-right">
+        <h1 class="font-bold mb-2 text-2xl text-cyan-400"> المبرمج الصغير</h1>
+        <p class="md:w-44 ">أكاديمية تعليمية مبتكرة للأطفال تهدف إلى جعل البرمجة تجربة ممتعة وسهلة.</p>
+      </div>
+
+      <div class="f2 text-center md:text-right">
+        <h1 class="font-bold mb-2 text-xl">الروابط الرئيسية</h1>
+        <ul class="space-y-2 text-slate-300">
+          <li class="hover:cursor-pointer hover:text-cyan-400">الرئيسية</li>
+          <li class="hover:cursor-pointer hover:text-cyan-400">أنواع الكورسات</li>
+          <li class="hover:cursor-pointer hover:text-cyan-400">الأسئلة الشائعة</li>
+          <li class="hover:cursor-pointer hover:text-cyan-400">الكورسات</li>
+          <li class="hover:cursor-pointer hover:text-cyan-400">تواصل معنا</li>
+
+        </ul>
+      </div>
+
+      <div class="f3 text-center md:text-right">
+        <h1 class="font-bold mb-2 text-xl"> سياسة الأكاديمية</h1>
+        <ul class="space-y-2 text-slate-300">
+          <li class="hover:cursor-pointer hover:text-cyan-400">سياسة الخصوصية</li>
+          <li class="hover:cursor-pointer hover:text-cyan-400"> شروط الاستخدام</li>
+          <li class="hover:cursor-pointer hover:text-cyan-400"> سياسة الدفع والاسترجاع</li>
+
+
+        </ul>
+      </div>
+
+      <div class="f1 text-center md:text-right">
+        <h1 class="font-bold mb-2 text-xl"> تواصل معنا</h1>
+        <p class="hover:cursor-pointer hover:text-cyan-400"> alsagheer@gmail.com</p>
+        <p class="hover:cursor-pointer hover:text-cyan-400">+ 963443668212</p>
+      </div>
+
+    </div>
+
+
+
+  </footer>
+
+  <!-- end footer -->
+
+  <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  <!-- Flowbite JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+
+</body>
+
+</html>
